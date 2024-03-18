@@ -46,13 +46,16 @@ spec "user.extras.markdown-preview"
 spec "user.extras.modicator"
 spec "user.extras.motions"
 spec "user.extras.navic"
+
 -- get real tabs using tabby
 -- get neo test for using nvim on tests
 spec "user.extras.neoscroll"
 spec "user.extras.noice"
+spec "user.extras.obsidian"
 spec "user.extras.symbols-outline"
 spec "user.extras.todoComments"
 spec "user.extras.ufo"
+spec "user.extras.venn"
 spec "user.extras.vim-tmux-navigator"
 
 -- lspsetting plugins

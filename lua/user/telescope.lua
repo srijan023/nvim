@@ -127,7 +127,7 @@ function M.config()
 
       find_files = {
         theme = "dropdown",
-        previewer = false,
+        -- previewer = false,
 
         path_display = filenameFirst,
       },
