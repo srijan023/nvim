@@ -130,6 +130,7 @@ function M.config()
         -- previewer = false,
 
         path_display = filenameFirst,
+        initial_mode = "normal",
       },
 
       buffers = {
@@ -175,7 +176,6 @@ function M.config()
       lsp_implementations = {
 
         theme = "dropdown",
-
         initial_mode = "normal",
       },
     },

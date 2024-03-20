@@ -89,8 +89,7 @@ function M.config()
 		"tailwindcss",
 		"clangd",
 		"omnisharp",
-    "rust_analyzer",
-    "ltex"
+    "rust_analyzer"
 	}
 
 	local default_diagnostic_config = {

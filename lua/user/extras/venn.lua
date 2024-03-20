@@ -29,7 +29,7 @@ function M.config()
 			end,
 		},
 		mode = "n",
-		body = "<leader>e",
+		body = "<leader>V",
 		heads = {
 			{ "H", "<C-v>h:VBox<CR>" },
 			{ "J", "<C-v>j:VBox<CR>" },

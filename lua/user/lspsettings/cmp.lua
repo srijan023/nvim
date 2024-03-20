@@ -36,9 +36,9 @@ local M = {
 		{
 			"hrsh7th/cmp-nvim-lua",
 		},
-		{
-			"tzachar/cmp-tabnine",
-		},
+		-- {
+		-- 	"tzachar/cmp-tabnine",
+		-- },
 		{
 			"onsails/lspkind.nvim",
 		},
@@ -52,7 +52,7 @@ function M.config()
 	require("luasnip/loaders/from_vscode").lazy_load()
 
 	vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-	vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+	-- vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 	vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
 	vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
@@ -195,7 +195,7 @@ function M.config()
 		sources = {
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" },
-			{ name = "cmp_tabnine" },
+			-- { name = "cmp_tabnine" },
 			{ name = "nvim_lua" },
 			{ name = "buffer" },
 			{ name = "path" },
