@@ -7,7 +7,6 @@ function M.config()
     q = { "<cmd>confirm q<CR>", "Quit" },
     -- h = { "<cmd>nohlsearch<CR>", "NOHL" },
     [";"] = { "<cmd>tabnew | terminal<CR>", "Term" },
-    v = { "<cmd>vsplit<CR>", "Split" },
 
     -- name of groups
     b = { name = "Buffers" },

@@ -99,7 +99,7 @@ function M.config()
 					luasnip.expand()
 				elseif luasnip.expand_or_jumpable() then
 					luasnip.expand_or_jump()
-        elseif cmp.visible() then
+				elseif cmp.visible() then
 					cmp.select_next_item()
 				elseif check_backspace() then
 					fallback() -- act like tab
@@ -117,7 +117,7 @@ function M.config()
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if luasnip.jumpable(-1) then
 					luasnip.jump(-1)
-        elseif cmp.visible() then
+				elseif cmp.visible() then
 					cmp.select_prev_item()
 				else
 					fallback()
@@ -153,7 +153,7 @@ function M.config()
 		-- 	end,
 		-- },
 		formatting = {
-      expandable_indicator = true,
+			expandable_indicator = true,
 			fields = { "kind", "abbr", "menu" }, -- vscode like layout
 			format = lspkind.cmp_format({
 				mode = "text_symbol",
@@ -193,7 +193,12 @@ function M.config()
 			}),
 		},
 		sources = {
-			{ name = "nvim_lsp" },
+			{
+				name = "nvim_lsp",
+				entry_filter = function(entry, ctx)
+					return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+				end,
+			},
 			{ name = "luasnip" },
 			-- { name = "cmp_tabnine" },
 			{ name = "nvim_lua" },
@@ -208,6 +213,10 @@ function M.config()
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = false,
+		},
+
+		completion = {
+			completeopt = "menu,menuone,noinsert,noselect",
 		},
 
 		window = {

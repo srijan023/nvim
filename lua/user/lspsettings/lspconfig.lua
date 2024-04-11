@@ -79,17 +79,20 @@ function M.config()
 	local servers = {
 		"lua_ls",
 		"cssls",
+		"jdtls",
+		"cmake",
 		"html",
 		"tsserver",
-    "emmet_ls",
+		"emmet_ls",
 		"pyright",
+		"eslint",
 		"bashls",
 		"jsonls",
 		"marksman",
 		"tailwindcss",
 		"clangd",
 		"omnisharp",
-    "rust_analyzer"
+		-- "rust_analyzer",
 	}
 
 	local default_diagnostic_config = {
@@ -102,7 +105,7 @@ function M.config()
 				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 			},
 		},
-		virtual_text = false,
+		virtual_text = true,
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
@@ -146,11 +149,25 @@ function M.config()
 
 		if server == "clangd" then
 			opts.capabilities = vim.tbl_deep_extend("force", opts.capabilities or {}, { offsetEncoding = { "utf-16" } })
+			opts.enable_roslyn_analysers = true
+			opts.enable_import_completion = true
+			opts.enable_decompilation_support = true
 		end
 
-    if server == "omnisharp" then
-      opts.cmd = {"/home/creatio/.local/share/nvim/mason/bin/omnisharp"}
-    end
+		if server == "omnisharp" then
+			opts.cmd = { "/home/creatio/.local/share/nvim/mason/bin/omnisharp" }
+		end
+
+		-- if server == "rust_analyzer" then
+		-- 	opts.filtypes = { "rust" }
+		-- 	opts.settings = {
+		-- 		["rust-analyzer"] = {
+		-- 			cargo = {
+		-- 				allFeature = true,
+		-- 			},
+		-- 		},
+		-- 	}
+		-- end
 		lspconfig[server].setup(opts)
 	end
 end

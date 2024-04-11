@@ -1,7 +1,7 @@
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+vim.opt.completeopt = { "menu", "menuone", "noinsert", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 2 -- so that `` is visible in markdown files
 -- vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
@@ -46,15 +46,15 @@ vim.opt.title = false
 -- colorcolumn = "80",
 -- colorcolumn = "120",
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
-vim.opt.fillchars:append {
-  stl = " ",
-}
+vim.opt.fillchars:append({
+	stl = " ",
+})
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append("c")
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd("set whichwrap+=<,>,[,],h,l")
 
-vim.cmd [[set iskeyword+=-]]
+vim.cmd([[set iskeyword+=-]])
 
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2

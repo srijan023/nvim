@@ -10,7 +10,6 @@ vim.g.maplocalleader = " "
 -- <C-i> and tab are same thing in neovim
 keymap("n", "<C-i>", "<C-i>", opts)
 
-
 -- Better window navigation
 -- Using Vim tmux navigation
 -- keymap("n", "<leader>wh", "<C-w>h", opts)
@@ -37,15 +36,13 @@ keymap("n", "g#", "g#zz", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
-
 -- when we yank something and paste over something else, this changes the register value to the replaced value
 keymap("x", "p", [["_dP]])
 
 -- mouse menu options
-vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
-vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
+vim.cmd([[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]])
+vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
 -- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
-
 
 vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
@@ -59,10 +56,10 @@ keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
 
 -- keymaps for debugging, here becuase we have F keys.
-keymap("n", "<F1>", "<cmd>DapStepInto<cr>", opts)
+keymap("n", "<F3>", "<cmd>DapStepInto<cr>", opts)
 keymap("n", "<F2>", "<cmd>DapStepOut<cr>", opts)
-keymap("n", "<F3>", "<cmd>DapStepOver<cr>", opts)
+keymap("n", "<F1>", "<cmd>DapStepOver<cr>", opts)
 
 keymap("n", "<leader>cw", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
-vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
+vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)

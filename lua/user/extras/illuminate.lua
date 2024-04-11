@@ -30,7 +30,6 @@ function M.config()
       "DressingSelect",
       "TelescopePrompt",
     },
-
   }
 end
 

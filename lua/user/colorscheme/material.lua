@@ -87,7 +87,7 @@ require("material").setup({
     custom_highlights = {}, -- Overwrite highlights with your own
 })
   vim.g.material_style = "deep ocean"
--- vim.cmd('colorscheme material')
+vim.cmd('colorscheme material')
 end
 
 return M
