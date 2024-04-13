@@ -36,9 +36,9 @@ local M = {
 		{
 			"hrsh7th/cmp-nvim-lua",
 		},
-		-- {
-		-- 	"tzachar/cmp-tabnine",
-		-- },
+		{
+			"tzachar/cmp-tabnine",
+		},
 		{
 			"onsails/lspkind.nvim",
 		},
@@ -184,6 +184,14 @@ function M.config()
 					"Operator",
 					"TypeParameter",
 				},
+				menu = {
+					nvim_lsp = "[LSP]",
+					path = "[Path]",
+					buffer = "[Buffer]",
+					luasnip = "[LuaSnip]",
+					emoji = "[Emoji]",
+					nvim_lua = "[Lua]",
+				},
 				maxwidth = 50,
 				ellipsis_char = "...",
 				show_labelDetails = true,
@@ -200,7 +208,7 @@ function M.config()
 				end,
 			},
 			{ name = "luasnip" },
-			-- { name = "cmp_tabnine" },
+			{ name = "cmp_tabnine" },
 			{ name = "nvim_lua" },
 			{ name = "buffer" },
 			{ name = "path" },

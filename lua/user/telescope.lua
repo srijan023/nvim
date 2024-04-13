@@ -12,41 +12,32 @@ function M.config()
 	local wk = require("which-key")
 	wk.register({
 
-		["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+		["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "[B]uffer list" },
 
 		["<leader>fe"] = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
-		["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-		["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-		["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-		["<leader>fs"] = { "<cmd>Telescope grep_string<cr>", "Find String" },
-		["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-		["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "Highlights" },
+		["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout [b]ranch" },
+		["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "[C]olorscheme" },
+		["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "[F]ind [f]iles" },
+		["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "[P]rojects" },
+		["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "[G]rep Text" },
+		["<leader>fs"] = { "<cmd>Telescope grep_string<cr>", "Find [S]tring" },
+		["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "[H]elp" },
+		["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "[H]ighlights" },
 		["<leader>fi"] = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-		["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-		["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		["<leader>fl"] = { "<cmd>Telescope resume<cr>", "[L]ast Search" },
+		["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", "[M]an Pages" },
 
-		["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-		["<leader>fR"] = { "<cmd>Telescope registers<cr>", "Registers" },
-		["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Commands" },
+		["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "[R]ecent File" },
+		["<leader>fR"] = { "<cmd>Telescope registers<cr>", "[R]egisters" },
+		["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "[K]eymaps" },
+		["<leader>fC"] = { "<cmd>Telescope commands<cr>", "[C]ommands" },
 
-		["<leader>go"] = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		["<leader>gC"] = {
-			"<cmd>Telescope git_bcommits<cr>",
-
-			"Checkout commit(for current file)",
-		},
-
-		["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Document [S]ymbols" },
+		["<leader>lR"] = { "<cmd>Telescope lsp_references<cr>", "Lsp [R]eferences" },
 		["<leader>lS"] = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+			"<cmd>Telescope lsp_dynamic_workspace_[s]ymbols<cr>",
 			"Workspace Symbols",
 		},
-		["<leader>le"] = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
 	})
 
 	-- get cool looking file address
@@ -62,7 +53,7 @@ function M.config()
 
 	local icons = require("user.icons")
 	local actions = require("telescope.actions")
-  local fb_actions = require("telescope._extensions.file_browser.actions")
+	local fb_actions = require("telescope._extensions.file_browser.actions")
 
 	local function filenameFirst(_, path)
 		local tail = vim.fs.basename(path)

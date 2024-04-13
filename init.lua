@@ -62,7 +62,7 @@ spec("user.extras.venn")
 spec("user.extras.vim-tmux-navigator")
 
 -- lspsetting plugins
--- spec "user.lspsettings.tabnine"
+spec("user.lspsettings.tabnine")
 spec("user.lspsettings.cmp")
 spec("user.lspsettings.javasettings")
 spec("user.lspsettings.lspconfig")

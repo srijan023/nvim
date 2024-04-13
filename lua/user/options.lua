@@ -1,5 +1,5 @@
 vim.opt.backup = false -- creates a backup file
-vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+-- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menu", "menuone", "noinsert", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 2 -- so that `` is visible in markdown files
@@ -51,6 +51,8 @@ vim.opt.fillchars:append({
 })
 
 vim.opt.shortmess:append("c")
+
+-- how to show whitespace in neovim
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 
