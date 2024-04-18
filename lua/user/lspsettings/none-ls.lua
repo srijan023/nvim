@@ -2,6 +2,7 @@ local M = {
 	"nvimtools/none-ls.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvimtools/none-ls-extras.nvim",
 	},
 }
 
@@ -38,8 +39,9 @@ function M.config()
 
 			-- },
 			-- formatting.eslint,
-			diagnostics.eslint,
-			diagnostics.flake8,
+			-- diagnostics.eslint_d,
+			require("none-ls.diagnostics.eslint"),
+			-- diagnostics.flake8,
 			null_ls.builtins.completion.spell,
 		},
 	})

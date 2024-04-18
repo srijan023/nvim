@@ -22,13 +22,14 @@ function M.config()
 		t = { name = "[T]est" },
 		h = { name = "[H]arpoon" },
 		o = { name = "[O]ther" },
-		a = {
-			name = "T[a]b",
-			n = { "<cmd>$tabnew<cr>", "[N]ew [E]mpty Tab" },
+		t = {
+			name = "[T]ab",
 			N = { "<cmd>tabnew %<cr>", "[N]ew Tab" },
-			o = { "<cmd>tabonly<cr>", "[O]nly" },
+			o = { "<cmd>tabnew<cr>", "[O]nly Tab" },
 			h = { "<cmd>-tabmove<cr>", "Move Left" },
 			l = { "<cmd>+tabmove<cr>", "Move Right" },
+			n = { "<cmd>tabn<cr>", "[N]ext tab" },
+			p = { "<cmd>tabp<cr>", "[P]revious tab" },
 		},
 		T = { name = "Treesitter" },
 	}

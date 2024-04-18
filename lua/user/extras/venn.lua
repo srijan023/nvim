@@ -1,7 +1,7 @@
 local M = {
 
 	"jbyuki/venn.nvim",
-	event = { "BufEnter" },
+	event = { "VeryLazy" },
 	dependencies = {
 		{ "anuvyklack/hydra.nvim" },
 	},

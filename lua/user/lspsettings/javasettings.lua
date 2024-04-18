@@ -1,5 +1,6 @@
 local M = {
 	"mfussenegger/nvim-jdtls",
+	event = "VeryLazy",
 }
 
 function M.config()

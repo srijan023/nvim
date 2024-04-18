@@ -32,6 +32,7 @@ vim.opt.cursorline = true -- highlight the current line
 vim.opt.number = true -- set numbered lines
 vim.opt.laststatus = 3
 vim.opt.wrap = true
+vim.opt.linebreak = true
 
 vim.opt.showcmd = false
 vim.opt.ruler = false

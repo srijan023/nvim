@@ -4,12 +4,13 @@ require("user.launch")
 require("user.options")
 require("user.extras.competitiveProgramming")
 
--- spec "user.colorscheme.catppuccin"
--- spec "user.colorscheme.everforest"
--- spec "user.colorscheme.material"
-spec("user.colorscheme.custom")
--- spec "user.colorscheme.rose-pine"
--- spec "user.colorscheme.onedark"
+vim.api.nvim_set_hl(0, "Comment", { italic = true })
+spec("user.colorscheme.catppuccin")
+-- spec("user.colorscheme.everforest")
+-- spec("user.colorscheme.material")
+-- spec("user.colorscheme.custom")
+-- spec("user.colorscheme.onedark")
+-- spec("user.colorscheme.rose-pine")
 
 -- core plugins
 spec("user.autopairs")
@@ -42,20 +43,22 @@ spec("user.extras.alpha")
 spec("user.extras.breadcrumps")
 spec("user.extras.devIcons")
 spec("user.extras.dressing")
+spec("user.extras.fidget")
 spec("user.extras.harpoon")
-spec("user.extras.illuminate")
+-- spec("user.extras.illuminate")
 -- spec "user.lab"
 spec("user.extras.markdown-preview")
 -- spec "user.extras.modicator"
-spec("user.extras.motions")
+-- spec("user.extras.motions")
 spec("user.extras.navic")
 
 -- get real tabs using tabby
 -- get neo test for using nvim on tests
 spec("user.extras.neoscroll")
-spec("user.extras.noice")
-spec("user.extras.obsidian")
-spec("user.extras.symbols-outline")
+-- spec("user.extras.noice")
+-- spec("user.extras.obsidian")
+spec("user.extras.silicon")
+-- spec("user.extras.symbols-outline")
 spec("user.extras.todoComments")
 spec("user.extras.ufo")
 spec("user.extras.venn")

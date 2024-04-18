@@ -1,6 +1,9 @@
 local M = {
 	"simrat39/symbols-outline.nvim",
 	event = "VeryLazy",
+	keys = {
+		{ "<leader>lc", "<cmd>SymbolsOutline<CR>", "Display symbols outline" },
+	},
 }
 
 function M.config()
@@ -74,9 +77,7 @@ function M.config()
 	})
 
 	local wk = require("which-key")
-	wk.register({
-		["<leader>lc"] = { "<cmd>SymbolsOutline<CR>", "Display symbols outline" },
-	})
+	wk.register({})
 end
 
 return M
