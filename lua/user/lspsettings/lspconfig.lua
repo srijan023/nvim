@@ -138,8 +138,9 @@ function M.config()
 				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 			},
 		},
-		virtual_text = true,
+		virtual_text = false,
 		update_in_insert = false,
+		show_diagnostic_autocmds = { "InsertLeave" },
 		underline = true,
 		severity_sort = true,
 		float = {

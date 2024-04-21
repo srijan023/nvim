@@ -17,6 +17,7 @@ spec("user.autopairs")
 spec("user.autotag")
 spec("user.colorizer")
 spec("user.comment")
+spec("user.fugitive")
 spec("user.gitsigns")
 spec("user.indentline")
 spec("user.lualine")
@@ -47,12 +48,13 @@ spec("user.extras.fidget")
 spec("user.extras.harpoon")
 -- spec("user.extras.illuminate")
 -- spec "user.lab"
+spec("user.extras.leetcode")
 spec("user.extras.markdown-preview")
 -- spec "user.extras.modicator"
 -- spec("user.extras.motions")
 spec("user.extras.navic")
 
--- get real tabs using tabby
+-- get real tabs using tabb)
 -- get neo test for using nvim on tests
 spec("user.extras.neoscroll")
 -- spec("user.extras.noice")
