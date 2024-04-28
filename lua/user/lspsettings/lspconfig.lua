@@ -1,5 +1,4 @@
 local M = {
-
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
@@ -67,7 +66,7 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 
 	if client.supports_method("textDocument/inlayHint") then
-		vim.lsp.inlay_hint.enable(bufnr, true)
+		vim.lsp.inlay_hint.enable(true, {})
 	end
 end
 
@@ -115,7 +114,7 @@ function M.config()
 		"jdtls",
 		"cmake",
 		"html",
-		"tsserver",
+		-- "tsserver",
 		"emmet_ls",
 		"pyright",
 		"eslint",

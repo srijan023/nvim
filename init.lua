@@ -4,13 +4,17 @@ require("user.launch")
 require("user.options")
 require("user.extras.competitiveProgramming")
 
+-- setting up discipline
+local discipline = require("user.extras.discipline")
+discipline.cowboy()
+
 vim.api.nvim_set_hl(0, "Comment", { italic = true })
-spec("user.colorscheme.catppuccin")
+-- spec("user.colorscheme.catppuccin")
 -- spec("user.colorscheme.everforest")
 -- spec("user.colorscheme.material")
 -- spec("user.colorscheme.custom")
 -- spec("user.colorscheme.onedark")
--- spec("user.colorscheme.rose-pine")
+spec("user.colorscheme.rose-pine")
 
 -- core plugins
 spec("user.autopairs")
@@ -45,10 +49,11 @@ spec("user.extras.breadcrumps")
 spec("user.extras.devIcons")
 spec("user.extras.dressing")
 spec("user.extras.fidget")
+spec("user.extras.flash")
 spec("user.extras.harpoon")
 -- spec("user.extras.illuminate")
 -- spec "user.lab"
-spec("user.extras.leetcode")
+-- spec("user.extras.leetcode")
 spec("user.extras.markdown-preview")
 -- spec "user.extras.modicator"
 -- spec("user.extras.motions")
@@ -73,6 +78,7 @@ spec("user.lspsettings.javasettings")
 spec("user.lspsettings.lspconfig")
 spec("user.lspsettings.none-ls")
 spec("user.lspsettings.rust-tools")
+spec("user.lspsettings.tsserver")
 
 -- this has to be at the end
 require("user.lazy")
