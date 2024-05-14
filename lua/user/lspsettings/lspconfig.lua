@@ -139,7 +139,7 @@ function M.config()
 		},
 		virtual_text = false,
 		update_in_insert = false,
-		show_diagnostic_autocmds = { "InsertLeave" },
+		show_diagnostic_autocmds = { "BufWrite" },
 		underline = true,
 		severity_sort = true,
 		float = {

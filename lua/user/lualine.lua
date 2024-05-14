@@ -29,6 +29,7 @@ function M.config()
 			section_separators = { left = "", right = "" },
 			component_separators = { left = "", right = "" },
 			ignore_focus = { "NvimTree" },
+			theme = "tundra",
 		},
 		sections = {
 			lualine_a = { "mode", { "branch", icon = "" } },
