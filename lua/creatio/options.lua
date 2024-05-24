@@ -1,6 +1,8 @@
 -- setting up leader keys
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro rnu"
+
 
 vim.opt.backup = false -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit

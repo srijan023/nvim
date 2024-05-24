@@ -33,9 +33,9 @@ return {
 
   -- installing plenary though not necessary
   {
-    "nvim-lua/plenary.nvim", 
+    "nvim-lua/plenary.nvim",
   },
-  
+
   -- other plugins
   {
   "mbbill/undotree",
@@ -45,6 +45,8 @@ return {
   },
   "tpope/vim-fugitive",
   "folke/zen-mode.nvim",
+
+  -- useless fun plugin
   "eandrju/cellular-automaton.nvim",
 }
 
