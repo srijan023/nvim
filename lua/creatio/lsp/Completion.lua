@@ -41,6 +41,15 @@ return{ "hrsh7th/nvim-cmp",
         { name = 'luasnip' }, -- For luasnip users.
       }, {
           { name = 'buffer' },
+          {
+            name = "nvim_lsp",
+            entry_filter = function(entry, ctx)
+              return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+            end,
+          },
+          { name = "path" },
+          { name = "emoji" },
+          { name = "treesitter" },
         })
     })
 
