@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro rnu"
 
-
 vim.opt.backup = false -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
@@ -75,4 +74,3 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- enabling undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
-

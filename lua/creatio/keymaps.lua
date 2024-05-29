@@ -8,6 +8,12 @@ keymap("n", "<ESC>", "<cmd>nohlsearch<CR>")
 keymap("n", "<leader>wh", ":split<CR>", { noremap = true, silent = true, desc = "[H]orizontal split" })
 keymap("n", "<leader>wv", ":vsplit<CR>", { noremap = true, silent = true, desc = "[V]ertical split" })
 
+-- moving between windows
+keymap("n", "<leader>sh", "<C-w>h", opts)
+keymap("n", "<leader>sl", "<C-w>l", opts)
+keymap("n", "<leader>sj", "<C-w>j", opts)
+keymap("n", "<leader>sk", "<C-w>k", opts)
+
 -- center everything we search
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)

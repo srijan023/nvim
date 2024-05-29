@@ -1,7 +1,7 @@
-return{
+return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
-		"nvim-lua/plenary.nvim"
+		"nvim-lua/plenary.nvim",
 	},
 	config = function()
 		require("telescope").setup({})
@@ -13,5 +13,5 @@ return{
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>bb", builtin.buffers, {})
-	end
+	end,
 }
