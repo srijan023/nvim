@@ -1,6 +1,6 @@
 return {
 	-- plugin for activity watcher
-	"ActivityWatch/aw-watcher-vim",
+	-- "ActivityWatch/aw-watcher-vim",
 
 	-- fidget loader
 	{
@@ -16,6 +16,18 @@ return {
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
+		end,
+	},
+
+	-- nvim colorizer
+	{
+		"NvChad/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup({
+				user_default_options = {
+					tailwind = true,
+				},
+			})
 		end,
 	},
 

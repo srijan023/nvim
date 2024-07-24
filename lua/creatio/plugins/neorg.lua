@@ -10,6 +10,7 @@ return {
 				["core.concealer"] = {},
 				["core.integrations.treesitter"] = {},
 				["core.summary"] = {},
+				["core.export"] = {},
 				["core.dirman"] = {
 					config = {
 						workspaces = {

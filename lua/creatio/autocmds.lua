@@ -1,12 +1,17 @@
+local augroup = vim.api.nvim_create_augroup
+local TheCreatioGroup = augroup("TheCreatio", {})
+
+local autocmd = vim.api.nvim_create_autocmd
+
 -- remove comment after enter
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+autocmd({ "BufWinEnter" }, {
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
 	end,
 })
 
 -- q to close
-vim.api.nvim_create_autocmd({ "FileType" }, {
+autocmd({ "FileType" }, {
 	pattern = {
 		"netrw",
 		"Jaq",
@@ -32,22 +37,28 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
+-- removing trailing whitespaces
+autocmd({ "BufWritePre" }, {
+	group = TheCreatioGroup,
+	pattern = "*",
+	command = [[%s/\s\+$//e]],
+})
+
+autocmd({ "CmdWinEnter" }, {
 	callback = function()
 		vim.cmd("quit")
 	end,
 })
 
 -- highlight feedback for yanking
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+autocmd({ "TextYankPost" }, {
 	desc = "Highlight when yanking text",
 	callback = function()
 		vim.highlight.on_yank()
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-
+autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
 	callback = function()
 		vim.opt_local.wrap = true

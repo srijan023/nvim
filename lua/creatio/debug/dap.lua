@@ -5,6 +5,7 @@ return {
 	config = function()
 		vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>")
 		vim.keymap.set("n", "<leader>dr", "<cmd>DapContinue<cr>")
+		require("dap.ext.vscode").load_launchjs(nil, { cppdbg = { "c", "cpp" } })
 
 		local dap = require("dap")
 		dap.adapters.cppdbg = {

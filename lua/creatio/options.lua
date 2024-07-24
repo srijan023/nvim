@@ -1,7 +1,9 @@
 -- setting up leader keys
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro rnu"
+-- vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro rnu"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.backup = false -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit
@@ -64,7 +66,7 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 
 vim.cmd([[set iskeyword+=-]])
 
-vim.g.netrw_banner = 0
+vim.g.netrw_banner = 1
 vim.g.netrw_mouse = 2
 
 -- color options from primegean

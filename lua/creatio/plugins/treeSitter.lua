@@ -1,4 +1,4 @@
-return{
+return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPost", "BufNewFile" },
   build = ":TSUpdate",
@@ -19,6 +19,7 @@ return{
         "c",
         "javascript",
         "cpp",
+        "java",
         "vimdoc",
         "css",
         "html",
@@ -39,5 +40,5 @@ return{
     })
     require("treesitter-context")
     vim.keymap.set("n", "<leader>lx", "<cmd>TSContextToggle<CR>")
-  end
+  end,
 }

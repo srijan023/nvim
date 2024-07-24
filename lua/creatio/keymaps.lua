@@ -14,6 +14,8 @@ keymap("n", "<leader>sl", "<C-w>l", opts)
 keymap("n", "<leader>sj", "<C-w>j", opts)
 keymap("n", "<leader>sk", "<C-w>k", opts)
 
+keymap("n", "<leader>nts", ":silent !tmux neww tmux-sessionizer<cr>", opts)
+
 -- center everything we search
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
@@ -50,6 +52,12 @@ keymap("n", "<leader>cw", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 
+-- moving through the splits
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+
 -- move line up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -57,5 +65,5 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>bn", ":bn<cr>")
 vim.keymap.set("n", "<leader>bp", ":bp<cr>")
 
-vim.keymap.set("n", "<leader>e", ":Ex<cr>")
-vim.keymap.set("n", "<leader>.", ":Ex .<cr>")
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>")
+vim.keymap.set("n", "<leader>.", ":Neotree float<cr>")
