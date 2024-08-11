@@ -13,11 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    {import = "creatio.plugins"},
-    {import = "creatio.lsp"},
-    {import = "creatio.debug"},
+    { import = "creatio.plugins" },
+    { import = "creatio.lsp" },
+    { import = "creatio.debug" },
   },
-  change_detection = {notify = false},
+  change_detection = { notify = false },
 })
 
 
@@ -25,4 +25,3 @@ require("lazy").setup({
 require("lazy").setup({
 },{})
 --]]
-
