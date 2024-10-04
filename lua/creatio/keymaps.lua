@@ -67,3 +67,5 @@ vim.keymap.set("n", "<leader>bp", ":bp<cr>")
 
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>")
 vim.keymap.set("n", "<leader>.", ":Neotree float<cr>")
+
+vim.keymap.set('n', '<leader>jr', ':w<CR>:!g++ -Wall -Wextra -DLOCAL % -o %:r && ./%:r<CR>', { noremap = true })
