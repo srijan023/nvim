@@ -4,6 +4,9 @@ vim.g.maplocalleader = " "
 -- vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro rnu"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.signcolumn = "yes"
+
+vim.opt.listchars = { space = "·" }
 
 vim.opt.backup = false                                              -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit
@@ -38,7 +41,7 @@ vim.opt.tabstop = 2          -- insert 2 spaces for a tab
 vim.opt.cursorline = true    -- highlight the current line
 vim.opt.number = true        -- set numbered lines
 vim.opt.laststatus = 3
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.linebreak = true
 
 vim.opt.showcmd = false
@@ -51,7 +54,7 @@ vim.opt.scrolloff = 19
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h14" -- the font used in graphical neovim applications
 vim.opt.title = false
--- colorcolumn = "80",
+vim.opt.colorcolumn = "120"
 -- colorcolumn = "120",
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append({
@@ -76,3 +79,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- enabling undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- setting up environment variables for java
+vim.env.JAVA_HOME = "/usr/lib/jvm/java-21-openjdk-amd64"
+vim.env.PATH = vim.env.JAVA_HOME .. "/bin:" .. vim.env.PATH

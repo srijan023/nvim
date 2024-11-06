@@ -1,4 +1,5 @@
-return{ "hrsh7th/nvim-cmp",
+return {
+  "hrsh7th/nvim-cmp",
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
@@ -13,10 +14,10 @@ return{ "hrsh7th/nvim-cmp",
 
   config = function()
     -- Set up nvim-cmp.
-    local cmp = require'cmp'
+    local cmp = require 'cmp'
 
-    local cmp_select = {behavior = cmp.SelectBehavior.Select}
-    cmp.setup({
+    local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    local options = {
       snippet = {
         expand = function(args)
           require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
@@ -40,18 +41,21 @@ return{ "hrsh7th/nvim-cmp",
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
       }, {
-          { name = 'buffer' },
-          {
-            name = "nvim_lsp",
-            entry_filter = function(entry, ctx)
-              return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
-            end,
-          },
-          { name = "path" },
-          { name = "emoji" },
-          { name = "treesitter" },
-        })
-    })
+        { name = 'buffer' },
+        {
+          name = "nvim_lsp",
+          entry_filter = function(entry, ctx)
+            return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+          end,
+        },
+        { name = "path" },
+        { name = "emoji" },
+        { name = "treesitter" },
+      })
+    }
+
+    options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
+    cmp.setup(options)
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
@@ -67,10 +71,9 @@ return{ "hrsh7th/nvim-cmp",
       sources = cmp.config.sources({
         { name = 'path' }
       }, {
-          { name = 'cmdline' }
-        }),
+        { name = 'cmdline' }
+      }),
       matching = { disallow_symbol_nonprefix_matching = false }
     })
-
   end
 }

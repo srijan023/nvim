@@ -86,6 +86,7 @@ return {
             capabilities = capabilities,
           })
         end,
+
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup({
@@ -101,6 +102,24 @@ return {
             },
           })
         end,
+        ['jdtls'] = function()
+          local lspconfig = require('lspconfig')
+          lspconfig.jdtls.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+              java = {
+                configuration = {
+                  runtimes = {
+                    name = "JavaSE-21",
+                    path = "/usr/lib/jvm/java-21-openjdk-amd64",
+                    default = true
+                  }
+                }
+              }
+            }
+          })
+        end
       },
     })
     vim.diagnostic.config({

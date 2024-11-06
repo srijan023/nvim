@@ -3,6 +3,26 @@ return {
   -- "ActivityWatch/aw-watcher-vim",
 
   -- notifier (minimal alternative to notify.nvim and similar to fidget)
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+
+  -- nv-chad colorscheme
+  {
+    "nvchad/ui",
+    config = function()
+      require "nvchad"
+    end
+  },
+
+  {
+    "nvchad/base46",
+    lazy = true,
+    build = function()
+      require("base46").load_all_highlights()
+    end
+  },
+
+  -- now we need to change the init.lua file for base46 config
+
   {
     "vigoux/notifier.nvim",
     config = function()
@@ -11,11 +31,21 @@ return {
       }
     end
   },
+
+  -- indent guide
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    main = "ibl",
+    opts = {}
+  },
+
   -- dressing for better input for renames and change
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
+
   -- fidget loader
   {
     "j-hui/fidget.nvim",
@@ -34,16 +64,16 @@ return {
   },
 
   -- nvim colorizer
-  {
-    "NvChad/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({
-        user_default_options = {
-          tailwind = true,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   config = function()
+  --     require("colorizer").setup({
+  --       user_default_options = {
+  --         tailwind = true,
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- automatically pair brackets
   {

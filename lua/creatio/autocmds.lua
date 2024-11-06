@@ -65,3 +65,11 @@ autocmd({ "FileType" }, {
     vim.opt_local.spell = true
   end,
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.env.JAVA_HOME = "/usr/lib/jvm/java-21-openjdk-amd64/"
+    vim.env.PATH = vim.env.JAVA_HOME .. "/bin:" .. vim.env.PATH
+  end,
+})
