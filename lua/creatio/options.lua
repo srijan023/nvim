@@ -6,7 +6,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.signcolumn = "yes"
 
-vim.opt.listchars = { space = "·" }
+vim.opt.list = true
+vim.opt.listchars = { lead = "." }
 
 vim.opt.backup = false                                              -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit
@@ -36,8 +37,8 @@ vim.opt.updatetime = 100     -- faster completion (4000ms default)
 vim.opt.writebackup = false  -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 vim.opt.expandtab = true     -- convert tabs to spaces
-vim.opt.shiftwidth = 2       -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2          -- insert 2 spaces for a tab
+vim.opt.shiftwidth = 4       -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 4          -- insert 2 spaces for a tab
 vim.opt.cursorline = true    -- highlight the current line
 vim.opt.number = true        -- set numbered lines
 vim.opt.laststatus = 3
@@ -58,7 +59,7 @@ vim.opt.colorcolumn = "120"
 -- colorcolumn = "120",
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append({
-  stl = " ",
+    stl = " ",
 })
 
 vim.opt.shortmess:append("c")

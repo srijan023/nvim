@@ -1,114 +1,143 @@
 return {
-  -- plugin for activity watcher
-  -- "ActivityWatch/aw-watcher-vim",
+    -- plugin for activity watcher
+    -- "ActivityWatch/aw-watcher-vim",
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
 
-  -- notifier (minimal alternative to notify.nvim and similar to fidget)
-  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+    -- whichkey
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
 
-  -- nv-chad colorscheme
-  {
-    "nvchad/ui",
-    config = function()
-      require "nvchad"
-    end
-  },
+    -- notifier (minimal alternative to notify.nvim and similar to fidget)
+    { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 
-  {
-    "nvchad/base46",
-    lazy = true,
-    build = function()
-      require("base46").load_all_highlights()
-    end
-  },
+    -- nv-chad colorscheme
+    {
+        "nvchad/ui",
+        config = function()
+            require("nvchad")
+        end,
+    },
 
-  -- now we need to change the init.lua file for base46 config
+    {
+        "nvchad/base46",
+        lazy = true,
+        build = function()
+            require("base46").load_all_highlights()
+        end,
+    },
 
-  {
-    "vigoux/notifier.nvim",
-    config = function()
-      require 'notifier'.setup {
-        -- You configuration here
-      }
-    end
-  },
+    -- now we need to change the init.lua file for base46 config
 
-  -- indent guide
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    main = "ibl",
-    opts = {}
-  },
+    {
+        "vigoux/notifier.nvim",
+        config = function()
+            require("notifier").setup({
+                -- You configuration here
+            })
+        end,
+    },
 
-  -- dressing for better input for renames and change
-  {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-  },
+    -- indent guide
+    -- {
+    --   "lukas-reineke/indent-blankline.nvim",
+    --   event = { "BufReadPre", "BufNewFile" },
+    --   main = "ibl",
+    --   opts = {}
+    -- },
 
-  -- fidget loader
-  {
-    "j-hui/fidget.nvim",
+    -- dressing for better input for renames and change
+    {
+        "stevearc/dressing.nvim",
+        event = "VeryLazy",
+    },
 
-    config = function()
-      require("fidget").setup({})
-    end,
-  },
+    -- fidget loader
+    {
+        "j-hui/fidget.nvim",
 
-  -- auto html tags
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
+        config = function()
+            require("fidget").setup({})
+        end,
+    },
 
-  -- nvim colorizer
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   config = function()
-  --     require("colorizer").setup({
-  --       user_default_options = {
-  --         tailwind = true,
-  --       },
-  --     })
-  --   end,
-  -- },
+    -- auto html tags
+    {
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    },
 
-  -- automatically pair brackets
-  {
-    "windwp/nvim-autopairs",
-    event = { "InsertEnter" },
-    config = function()
-      require("nvim-autopairs").setup({
-        check_ts = true,
-        disable_filetype = { "TelescopePrompt", "spectre_panel" },
-      })
-    end,
-  },
+    -- nvim colorizer
+    -- {
+    --   "NvChad/nvim-colorizer.lua",
+    --   config = function()
+    --     require("colorizer").setup({
+    --       user_default_options = {
+    --         tailwind = true,
+    --       },
+    --     })
+    --   end,
+    -- },
 
-  -- installing plenary though not necessary
-  {
-    "nvim-lua/plenary.nvim",
-  },
+    -- automatically pair brackets
+    {
+        "windwp/nvim-autopairs",
+        event = { "InsertEnter" },
+        config = function()
+            require("nvim-autopairs").setup({
+                check_ts = true,
+                disable_filetype = { "TelescopePrompt", "spectre_panel" },
+            })
+        end,
+    },
 
-  -- luarocks for neorg
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1000,
-    config = true,
-  },
+    -- installing plenary though not necessary
+    {
+        "nvim-lua/plenary.nvim",
+    },
 
-  -- other plugins
-  {
-    "mbbill/undotree",
-    config = function()
-      vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
-    end,
-  },
-  "tpope/vim-fugitive",
-  "folke/zen-mode.nvim",
+    -- luarocks for neorg
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
+    },
 
-  -- useless fun plugin
-  "eandrju/cellular-automaton.nvim",
+    -- other plugins
+    {
+        "mbbill/undotree",
+        config = function()
+            vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle, { desc = "Toggle undo tree" })
+        end,
+    },
+    "tpope/vim-fugitive",
+    "folke/zen-mode.nvim",
+
+    -- useless fun plugin
+    "eandrju/cellular-automaton.nvim",
 }

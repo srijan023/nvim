@@ -1,18 +1,9 @@
-return{
-  "folke/trouble.nvim",
-  config = function()
-    require("trouble").setup()
+return {
+    "folke/trouble.nvim",
+    config = function()
+        require("trouble").setup({})
 
-    vim.keymap.set("n", "<leader>tt", function()
-      require("trouble").toggle()
-    end)
-
-    vim.keymap.set("n", "<leader>tn", function()
-      require("trouble").next({skip_groups = true, jump = true})
-    end)
-    
-    vim.keymap.set("n", "<leader>tp", function()
-      require("trouble").previous({skip_groups = true, jump = true})
-    end)
-  end
+        vim.keymap.set("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>")
+        vim.keymap.set("n", "<leader>tb", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>")
+    end
 }
