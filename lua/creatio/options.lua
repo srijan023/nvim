@@ -7,7 +7,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.signcolumn = "yes"
 
 vim.opt.list = true
-vim.opt.listchars = { lead = "." }
+-- vim.opt.listchars = { lead = "." }
 
 vim.opt.backup = false                                              -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- this makes the neovim clipboard and system clipboard one single unit

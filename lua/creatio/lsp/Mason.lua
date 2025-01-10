@@ -11,7 +11,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         { "antosha417/nvim-lsp-file-operations", config = true },
-        { "folke/neodev.nvim", opts = {} },
+        { "folke/neodev.nvim",                   opts = {} },
         "hrsh7th/cmp-nvim-lsp",
         "nvim-java/nvim-java",
     },
@@ -42,10 +42,12 @@ return {
 
             -- might get dropped due to trouble
             vim.keymap.set("n", "]d", function()
-                vim.diagnostic.jump({ count = 1, float = true })
+                -- vim.diagnostic.jump({ count = 1, float = true })
+                vim.diagnostic.goto_next()
             end, { silent = true, noremap = true, desc = "Diagnostics next" })
             vim.keymap.set("n", "[d", function()
-                vim.diagnostic.jump({ count = -1, float = true })
+                -- vim.diagnostic.jump({ count = -1, float = true })
+                vim.diagnostic.goto_prev()
             end, { silent = true, noremap = true, desc = "Diagnostics previous" })
 
             vim.keymap.set("n", "<leader>vca", function()

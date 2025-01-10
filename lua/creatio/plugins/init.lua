@@ -1,6 +1,5 @@
 return {
     -- plugin for activity watcher
-    -- "ActivityWatch/aw-watcher-vim",
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -33,24 +32,6 @@ return {
 
     -- notifier (minimal alternative to notify.nvim and similar to fidget)
     { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
-
-    -- nv-chad colorscheme
-    {
-        "nvchad/ui",
-        config = function()
-            require("nvchad")
-        end,
-    },
-
-    {
-        "nvchad/base46",
-        lazy = true,
-        build = function()
-            require("base46").load_all_highlights()
-        end,
-    },
-
-    -- now we need to change the init.lua file for base46 config
 
     {
         "vigoux/notifier.nvim",

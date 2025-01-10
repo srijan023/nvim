@@ -75,7 +75,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>bn", ":bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bp<cr>", { desc = "Previous buffer" })
 
-vim.keymap.set("n", "<leader>.", ":Neotree toggle<cr>", { desc = "Toggle noetree" })
-vim.keymap.set("n", "<leader>e", ":Neotree float<cr>", { desc = "Floating neotree" })
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>", { desc = "Toggle noetree" })
+-- vim.keymap.set("n", "<leader>e", ":Neotree float<cr>", { desc = "Floating neotree" })
 
 vim.keymap.set("n", "<leader>jr", ":w<CR>:!g++ -Wall -Wextra -DLOCAL % -o %:r && ./%:r<CR>", { noremap = true })
