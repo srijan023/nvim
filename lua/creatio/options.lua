@@ -41,7 +41,7 @@ vim.opt.shiftwidth = 4       -- the number of spaces inserted for each indentati
 vim.opt.tabstop = 4          -- insert 2 spaces for a tab
 vim.opt.cursorline = true    -- highlight the current line
 vim.opt.number = true        -- set numbered lines
-vim.opt.laststatus = 3
+vim.opt.laststatus = 2
 vim.opt.wrap = false
 vim.opt.linebreak = true
 

@@ -71,6 +71,7 @@ return {
 
         require("mason").setup()
         require("mason-lspconfig").setup({
+            automatic_installation = {},
             ensure_installed = {
                 "bashls",
                 "clangd",

@@ -4,15 +4,15 @@ return {
     name = "rose-pine",
     config = function()
         require("rose-pine").setup({
-            variant = "main",      -- auto, main, moon, or dawn
+            variant = "auto",      -- auto, main, moon, or dawn
             dark_variant = "main", -- main, moon, or dawn
             dim_inactive_windows = false,
             extend_background_behind_borders = true,
 
             enable = {
-                terminal = true,
-                legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-                migrations = true,        -- Handle deprecated options automatically
+                terminal = false,
+                legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
+                migrations = true,         -- Handle deprecated options automatically
             },
 
             styles = {
@@ -61,6 +61,13 @@ return {
             },
 
             highlight_groups = {
+                Number = { fg = "#5BC1A2" },
+                -- LineNr = { fg = "#3B4261" },
+                LineNr4 = { fg = "#3B4261" },
+                LineNr3 = { fg = "#445464" },
+                LineNr2 = { fg = "#5D8E97" },
+                LineNr1 = { fg = "#7DAEB9" },
+                LineNr0 = { fg = "#bDeEf9", bold = true }
                 -- Comment = { fg = "#8d99ae" },
                 -- VertSplit = { fg = "muted", bg = "muted" },
             },

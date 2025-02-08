@@ -75,6 +75,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>bn", ":bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bp<cr>", { desc = "Previous buffer" })
 
+-- for todo
+vim.keymap.set("n", "<leader>oa", ":TodoTelescope<cr>", { desc = "Todo using telescope" })
+
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<cr>", { desc = "Toggle noetree" })
 -- vim.keymap.set("n", "<leader>e", ":Neotree float<cr>", { desc = "Floating neotree" })
 

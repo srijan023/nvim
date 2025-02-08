@@ -43,12 +43,12 @@ return {
     },
 
     -- indent guide
-    -- {
-    --   "lukas-reineke/indent-blankline.nvim",
-    --   event = { "BufReadPre", "BufNewFile" },
-    --   main = "ibl",
-    --   opts = {}
-    -- },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        main = "ibl",
+        opts = {}
+    },
 
     -- dressing for better input for renames and change
     {
@@ -74,16 +74,16 @@ return {
     },
 
     -- nvim colorizer
-    -- {
-    --   "NvChad/nvim-colorizer.lua",
-    --   config = function()
-    --     require("colorizer").setup({
-    --       user_default_options = {
-    --         tailwind = true,
-    --       },
-    --     })
-    --   end,
-    -- },
+    {
+        "NvChad/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup({
+                user_default_options = {
+                    tailwind = true,
+                },
+            })
+        end,
+    },
 
     -- automatically pair brackets
     {
